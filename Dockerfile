@@ -2,8 +2,14 @@
 FROM node:6-slim
 MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
+RUN apt-get update && apt-get install -y apt-transport-https
+
+# Add yarn to sources list
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
 # Install git
-RUN apt-get update && apt-get install -y git rsync bzip2
+RUN apt-get update && apt-get install -y git rsync bzip2  yarn
 
 # Global install gulp and bower
 RUN npm set progress=false && \
