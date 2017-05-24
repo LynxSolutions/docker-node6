@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y git rsync bzip2  yarn=0.23.2-1 \
 
 # Global install gulp and bower
 RUN npm set progress=false && \
-	npm install -g gulp grunt bower phantomjs && \
+	npm install -g gulp grunt bower phantomjs @angular/cli && \
 	printf '\n%s' 'registry = http://nexus.lynxsolutions.eu/repository/npm/' >> /root/.npmrc && \
 	echo '{ "allow_root": true }' > /root/.bowerrc
 
