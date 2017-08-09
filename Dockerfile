@@ -2,7 +2,7 @@
 FROM node:6-slim
 MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
-RUN apt-get update && apt-get install -y apt-transport-https
+RUN apt-get update && apt-get install -y apt-transport-https libpng12-dev
 
 # Add yarn to sources list
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
