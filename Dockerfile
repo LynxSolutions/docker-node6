@@ -1,5 +1,5 @@
 # Pull base image.
-FROM node:6-slim
+FROM node:14.21.3-bullseye-slim
 MAINTAINER Nimrod Nagy <nimrod.nagy@lynxsolutions.eu>
 
 RUN apt-get update && apt-get install -y apt-transport-https libpng12-dev
